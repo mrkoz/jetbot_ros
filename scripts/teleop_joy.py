@@ -23,13 +23,13 @@ class Teleop:
  
     def callback(self, data):
         """ Receive joystick data, formulate String message. """
-        if data.axes[7] == 1:
+        if data.axes[7] == -1:
             cmd="forward"
-        elif data.axes[7] == -1:
+        elif data.axes[7] == 1:
             cmd="backward"
-        elif data.axes[6] == 1:
-            cmd="left"
         elif data.axes[6] == -1:
+            cmd="left"
+        elif data.axes[6] == 1:
             cmd="right"
         else:
             cmd="stop"

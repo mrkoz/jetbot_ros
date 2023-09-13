@@ -1,0 +1,15 @@
+<launch>
+<!-- joystick node -->
+  <node pkg="joy" name="joy_node" type="joy_node" output="screen" />
+<!-- jetbot modors -->
+  <node pkg="jetbot_ros" name="jetbot_motors" type="jetbot_motors.py" output="screen" />
+<!-- jetbot modors -->
+  <node pkg="jetbot_ros" name="jetbot_teleop_joy" type="teleop_joy.py" output="screen" />
+<!-- jetbot modors -->
+<!--
+rosrun joy joy_node 
+rosrun jetbot_ros jetbot_motors.py
+rosrun jetbot_ros teleop_joy.py
+//camera? - rosrun jetbot_ros jetbot_camera ?
+-->
+</launch>

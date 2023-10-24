@@ -221,3 +221,31 @@ A window should then open displaying the live video from the camera.  By default
 
 See the [`gazebo`](gazebo) directory of the repo for instructions on loading the JetBot simulator model for Gazebo.
 
+## Spideys mods
+
+### Launch file
+
+To make things simpler I have created a launch file that runs the camera FPV and the Joy command.
+
+This launch file is `jetbot_ros/launch/teleop_joy_camera.launch`
+
+
+### auto upstart
+
+Provided the project is successfully built, you can set up this to run the joy/camera as a service. This uses ros upstart to install a system service. Install the system service using Upstart:
+
+```bash
+# Install upstart
+sudo apt install ros-melodic-robot-upstart
+
+# Add service
+rosrun robot_upstart install jetbot_ros/launch/teleop_joy_camera.launch
+
+# Refresh systemd and run the service
+sudo systemctl daemon-reload && sudo systemctl start jetbot
+```
+
+To disable the service:
+```bash
+sudo systemctl disable jetbot.service
+```

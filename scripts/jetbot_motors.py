@@ -29,12 +29,12 @@ def set_speed(motor_ID, value):
 
 	if value > 0:
 		motor.run(Adafruit_MotorHAT.FORWARD)
-                motor_driver._pwm.setPWM(ina,0,speed*16)
+                motor_driver._pwm.setPWM(ina,0,speed*10)
                 motor_driver._pwm.setPWM(inb,0,0)
 	else:
 		motor.run(Adafruit_MotorHAT.BACKWARD)
                 motor_driver._pwm.setPWM(ina,0,0)
-                motor_driver._pwm.setPWM(inb,0,speed*16)
+                motor_driver._pwm.setPWM(inb,0,speed*10)
                                 
 
 
